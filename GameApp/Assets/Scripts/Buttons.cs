@@ -7,7 +7,6 @@ public class Buttons : MonoBehaviour
 {
     public void click(string sceneName)
     {
-        Debug.Log("hey");
         SceneManager.LoadScene(sceneName);
     }
 }
