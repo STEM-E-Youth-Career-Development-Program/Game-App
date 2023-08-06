@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638269458692145559
+      ticks: 638269556235174097
     m_Hash: 2748323826
   m_LockFileStatus:
     m_FilePath: C:/Users/ashoo/Documents/GitHub/Game-App/GameApp/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638269458692191561
+      ticks: 638269556235174097
     m_Hash: 2520203705
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
