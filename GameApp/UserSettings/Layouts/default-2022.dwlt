@@ -321,7 +321,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scenes/Screens
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -329,15 +329,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scenes/Screens
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\kgksa\Downloads\Coding\Game-App\GameApp
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 88590000
-    m_LastClickedID: 22920
+    m_SelectedIDs: a8590000
+    m_LastClickedID: 22952
     m_ExpandedIDs: 000000007c5900007e5900008859000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -506,9 +506,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: aa590000
       m_LastClickedID: 0
-      m_ExpandedIDs: 2af9ffff60f9ffffa0f9ffff20fbffff
+      m_ExpandedIDs: 9ef9ffffdef9ffff2cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -914,9 +914,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.22975296, y: 0, z: -0, w: -0.973249}
   m_Size:
-    m_Target: 249.8336
+    m_Target: 263.54126
     speed: 2
-    m_Value: 249.8336
+    m_Value: 263.54126
   m_Ortho:
     m_Target: 0
     speed: 2
