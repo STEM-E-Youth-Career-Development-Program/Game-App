@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/garagetire.unity
+- path: Assets/Scenes/Screens/SettingsScreen.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
