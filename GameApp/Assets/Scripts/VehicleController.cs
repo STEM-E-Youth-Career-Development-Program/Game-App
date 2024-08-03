@@ -25,6 +25,10 @@ public class VehicleController : MonoBehaviour
     public float ForwardExtremumSlip = 0.4f;
     public float SidewaysExtremumSlip = 0.2f;
 
+    [Header("Stability Settings")]
+    public float AntiRollForce = 5000f;
+    public float DownforceCoefficient = 1f;
+
     private Rigidbody rb;
     private float currentMotorTorque;
     private float currentSteeringAngle;
@@ -51,7 +55,6 @@ public class VehicleController : MonoBehaviour
 
     private void SetupWheelCollider(WheelCollider wheel)
     {
-        // Suspension setup
         wheel.suspensionDistance = SuspensionDistance;
         JointSpring spring = wheel.suspensionSpring;
         spring.spring = SpringForce;
@@ -59,7 +62,6 @@ public class VehicleController : MonoBehaviour
         spring.targetPosition = TargetPosition;
         wheel.suspensionSpring = spring;
 
-        // Friction setup
         WheelFrictionCurve forwardFriction = wheel.forwardFriction;
         forwardFriction.stiffness = ForwardFriction;
         forwardFriction.extremumSlip = ForwardExtremumSlip;
@@ -74,6 +76,8 @@ public class VehicleController : MonoBehaviour
     private void FixedUpdate()
     {
         UpdateSuspension();
+        ApplyAntiRollForce();
+        ApplyDownforce();
         Drive();
         Steer();
         Brake();
@@ -87,18 +91,50 @@ public class VehicleController : MonoBehaviour
             WheelData data = wheelDataList[i];
             Vector3 wheelPosition = data.Collider.transform.position;
 
-            // Calculate spring velocity
             data.SpringVelocity = (wheelPosition - data.PrevPosition).magnitude / Time.fixedDeltaTime;
 
-            // Update suspension force based on spring velocity
             JointSpring spring = data.Collider.suspensionSpring;
-            spring.spring = SpringForce + (data.SpringVelocity * 1000); // Adjust multiplier as needed
-            spring.damper = DamperForce + (data.SpringVelocity * 100);  // Adjust multiplier as needed
+            spring.spring = Mathf.Lerp(SpringForce, SpringForce * 1.5f, data.SpringVelocity / 5f);
+            spring.damper = Mathf.Lerp(DamperForce, DamperForce * 1.5f, data.SpringVelocity / 5f);
             data.Collider.suspensionSpring = spring;
 
-            // Store current position for next frame
             data.PrevPosition = wheelPosition;
         }
+    }
+
+    private void ApplyAntiRollForce()
+    {
+        ApplyAntiRoll(WheelColliders[0], WheelColliders[1]); // Front
+        ApplyAntiRoll(WheelColliders[2], WheelColliders[3]); // Rear
+    }
+
+    private void ApplyAntiRoll(WheelCollider wheelL, WheelCollider wheelR)
+    {
+        WheelHit hitL, hitR;
+        float travelL = 1.0f;
+        float travelR = 1.0f;
+
+        bool groundedL = wheelL.GetGroundHit(out hitL);
+        bool groundedR = wheelR.GetGroundHit(out hitR);
+
+        if (groundedL)
+            travelL = (-wheelL.transform.InverseTransformPoint(hitL.point).y - wheelL.radius) / wheelL.suspensionDistance;
+        if (groundedR)
+            travelR = (-wheelR.transform.InverseTransformPoint(hitR.point).y - wheelR.radius) / wheelR.suspensionDistance;
+
+        float antiRollForce = (travelL - travelR) * AntiRollForce;
+
+        if (groundedL)
+            rb.AddForceAtPosition(wheelL.transform.up * -antiRollForce, wheelL.transform.position);
+        if (groundedR)
+            rb.AddForceAtPosition(wheelR.transform.up * antiRollForce, wheelR.transform.position);
+    }
+
+    private void ApplyDownforce()
+    {
+        float speed = rb.velocity.magnitude;
+        float downforce = DownforceCoefficient * speed * speed;
+        rb.AddForce(-transform.up * downforce);
     }
 
     private void Drive()
@@ -106,7 +142,7 @@ public class VehicleController : MonoBehaviour
         float targetMotorTorque = InputCtrl.Vertical * MaxMotorTorque;
         currentMotorTorque = Mathf.Lerp(currentMotorTorque, targetMotorTorque, Time.fixedDeltaTime * 5f);
 
-        for (int i = 0; i < WheelColliders.Length; i++)
+        for (int i = 2; i < WheelColliders.Length; i++) // Apply drive force to rear wheels only
         {
             WheelColliders[i].motorTorque = currentMotorTorque;
             AdjustWheelFriction(WheelColliders[i]);
@@ -118,16 +154,14 @@ public class VehicleController : MonoBehaviour
         WheelHit hit;
         if (wheel.GetGroundHit(out hit))
         {
-            // Adjust forward friction based on slip and suspension compression
-            WheelFrictionCurve fwdFriction = wheel.forwardFriction;
-            float slipFactor = 1 - Mathf.Abs(hit.forwardSlip);
+            float slipFactor = Mathf.Clamp01(1 - (Mathf.Abs(hit.forwardSlip) + Mathf.Abs(hit.sidewaysSlip)));
             float compressionFactor = 1 - (hit.force / wheel.sprungMass);
+
+            WheelFrictionCurve fwdFriction = wheel.forwardFriction;
             fwdFriction.stiffness = Mathf.Lerp(ForwardFriction * 0.5f, ForwardFriction, slipFactor * compressionFactor);
             wheel.forwardFriction = fwdFriction;
 
-            // Adjust sideways friction based on slip and suspension compression
             WheelFrictionCurve sideFriction = wheel.sidewaysFriction;
-            slipFactor = 1 - Mathf.Abs(hit.sidewaysSlip);
             sideFriction.stiffness = Mathf.Lerp(SidewaysFriction * 0.5f, SidewaysFriction, slipFactor * compressionFactor);
             wheel.sidewaysFriction = sideFriction;
         }
