@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 1304538038}
   - component: {fileID: 1304538037}
   - component: {fileID: 1304538036}
+  - component: {fileID: 1304538039}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -382,6 +383,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1304538039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304538035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d693c300c8dcf3841b979b13d4470f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 6948587442417143542}
+  smoothSpeed: 0.125
+  offset: {x: 0, y: 2, z: -8}
 --- !u!1 &1488000092
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488000092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.10400009, y: 0.734, z: 0.10599995}
+  m_LocalPosition: {x: 0.2, y: 0.88, z: -0.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1357,6 +1373,10 @@ MonoBehaviour:
   SidewaysFriction: 1.5
   ForwardExtremumSlip: 0.4
   SidewaysExtremumSlip: 0.2
+  AntiRollForce: 5000
+  DownforceCoefficient: 1
+  TractionControlStrength: 0.5
+  MaxSpeedKMH: 200
 --- !u!146 &7887936941992014634
 WheelCollider:
   m_ObjectHideFlags: 0
