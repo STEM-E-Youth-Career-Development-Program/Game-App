@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{FBEF879E-3C43-2746-7567-F7518B838758}|Assembly-CSharp.csproj|solutionrelative:assets\\vehiclecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FBEF879E-3C43-2746-7567-F7518B838758}|Assembly-CSharp.csproj|c:\\repository\\game-app\\gameapp\\assets\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FBEF879E-3C43-2746-7567-F7518B838758}|Assembly-CSharp.csproj|C:\\Repository\\Game-App\\GameApp\\assets\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FBEF879E-3C43-2746-7567-F7518B838758}|Assembly-CSharp.csproj|solutionrelative:assets\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -28,7 +28,7 @@
               "RelativeDocumentMoniker": "Assets\\VehicleController.cs",
               "ToolTip": "C:\\Repository\\Game-App\\GameApp\\Assets\\VehicleController.cs",
               "RelativeToolTip": "Assets\\VehicleController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAGEAAAAAAAAAAAAAwGkAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-03T06:19:45.777Z",
               "EditorCaption": ""
@@ -43,8 +43,7 @@
               "RelativeToolTip": "Assets\\CarController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-03T05:57:32.222Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-03T05:57:32.222Z"
             }
           ]
         }
