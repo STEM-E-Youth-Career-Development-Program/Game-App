@@ -355,6 +355,7 @@
 "Assets/CarController.cs"
 "Assets/InputController.cs"
 "Assets/Scripts/Buttons.cs"
+"Assets/VehicleController.cs"
 -langversion:9.0
 
 /deterministic

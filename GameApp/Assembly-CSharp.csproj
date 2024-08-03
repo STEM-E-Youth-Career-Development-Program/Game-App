@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Assets\InputController.cs" />
     <Compile Include="Assets\CarController.cs" />
+    <Compile Include="Assets\VehicleController.cs" />
     <Compile Include="Assets\Scripts\Buttons.cs" />
   </ItemGroup>
   <ItemGroup>
