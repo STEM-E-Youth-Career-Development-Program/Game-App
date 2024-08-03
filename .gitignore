@@ -7,7 +7,16 @@
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
 [Mm]emoryCaptures/
-
+/[Ll]ibrary/**/*.dag
+/[Ll]ibrary/**/*.json
+/[Ll]ibrary/**/*.dll
+/[Ll]ibrary/**/*.pdb
+/[Ll]ibrary/**/*.traceevent
+/[Tt]emp/**/*.dag
+/[Tt]emp/**/*.json
+/[Tt]emp/**/*.dll
+/[Tt]emp/**/*.pdb
+/[Tt]emp/**/*.traceevent
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
 
