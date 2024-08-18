@@ -77,14 +77,18 @@ public class VehicleController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        LimitTopSpeed();
+        for (int i = 0; i < WheelColliders.Length; i++)
+        {
+            
+        }
         UpdateWheelData();
+        UpdateWheelMovements();
+        LimitTopSpeed();
         ApplyAntiRollForce();
         ApplyDownforce();
         Drive();
         Steer();
         Brake();
-        UpdateWheelMovements();
     }
 
     private void LimitTopSpeed()
@@ -156,7 +160,7 @@ public class VehicleController : MonoBehaviour
         float targetMotorTorque = InputCtrl.Vertical * MaxMotorTorque;
         currentMotorTorque = Mathf.Lerp(currentMotorTorque, targetMotorTorque, Time.fixedDeltaTime * 5f);
 
-        for (int i = 2; i < WheelColliders.Length; i++) // Apply drive force to rear wheels only
+        for (int i = 2; i < 4; i++) // Apply drive force to rear wheels only
         {
             float adjustedTorque = ApplyTractionControl(currentMotorTorque, wheelDataList[i]);
             WheelColliders[i].motorTorque = adjustedTorque;
@@ -194,13 +198,16 @@ public class VehicleController : MonoBehaviour
 
     private void Steer()
     {
-        float targetSteeringAngle = InputCtrl.Horizontal * MaxSteeringAngle;
-        currentSteeringAngle = Mathf.Lerp(currentSteeringAngle, targetSteeringAngle, Time.fixedDeltaTime * 5f);
+        //if (InputCtrl.Horizontal == 1f || InputCtrl.Horizontal == -1f)
+        //{
+            float targetSteeringAngle = InputCtrl.Horizontal * MaxSteeringAngle;
+            currentSteeringAngle = Mathf.Lerp(currentSteeringAngle, targetSteeringAngle, Time.fixedDeltaTime * 5f);
 
-        // Apply steering to front wheels
-        WheelColliders[0].steerAngle = currentSteeringAngle;
-        WheelColliders[1].steerAngle = currentSteeringAngle;
-    }
+            // Apply steering to front wheels
+            WheelColliders[0].steerAngle = currentSteeringAngle;
+            WheelColliders[1].steerAngle = currentSteeringAngle;
+        }
+    //}
 
     private void Brake()
     {
