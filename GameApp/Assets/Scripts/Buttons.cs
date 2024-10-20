@@ -9,4 +9,8 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void reloadScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
