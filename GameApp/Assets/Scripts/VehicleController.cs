@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class VehicleController : MonoBehaviour
 {
@@ -28,13 +29,18 @@ public class VehicleController : MonoBehaviour
     [Header("Stability Settings")]
     public float AntiRollForce = 5000f;
     public float DownforceCoefficient = 1f;
-    public float TractionControlStrength = 0.5f;
+    public static float TractionControlStrength = 0.5f;
+    float curTCS = TractionControlStrength;
     public float MaxSpeedKMH = 200f;
 
     private Rigidbody rb;
     private float currentMotorTorque;
     private float currentSteeringAngle;
     private List<WheelData> wheelDataList = new List<WheelData>();
+
+    public WeatherManager WeatherMgr;
+    bool slippery = false;
+    public float lowTraction = 0.2f;
 
     private class WheelData
     {
@@ -77,10 +83,6 @@ public class VehicleController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        for (int i = 0; i < WheelColliders.Length; i++)
-        {
-            
-        }
         UpdateWheelData();
         UpdateWheelMovements();
         LimitTopSpeed();
@@ -100,6 +102,17 @@ public class VehicleController : MonoBehaviour
         }
     }
 
+    private void LoseTraction()
+    {
+        if (slippery)
+        {
+            curTCS = lowTraction;
+        }
+        else
+        {
+            curTCS = TractionControlStrength;
+        }
+    }
     private void UpdateWheelData()
     {
         for (int i = 0; i < wheelDataList.Count; i++)
@@ -173,7 +186,7 @@ public class VehicleController : MonoBehaviour
         float slipThreshold = 0.2f;
         if (Mathf.Abs(wheelData.SlipRatio) > slipThreshold)
         {
-            return torque * (1f - TractionControlStrength);
+            return torque * (1f - curTCS);
         }
         return torque;
     }
