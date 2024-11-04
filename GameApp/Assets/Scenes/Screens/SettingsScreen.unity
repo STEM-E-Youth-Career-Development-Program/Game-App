@@ -848,6 +848,7 @@ MonoBehaviour:
   SidewaysExtremumSlip: 0.3
   AntiRollForce: 7000
   DownforceCoefficient: 0.8
+  curTCS: 0.5
   MaxSpeedKMH: 150
   WeatherMgr: {fileID: 0}
   lowTraction: 0.2
@@ -1542,7 +1543,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1965304409}
         m_TargetAssemblyTypeName: WeatherChanger, Assembly-CSharp
-        m_MethodName: Test
+        m_MethodName: Test1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1552,6 +1553,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+  regain:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1965304409}
+        m_TargetAssemblyTypeName: WeatherChanger, Assembly-CSharp
+        m_MethodName: Test2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  vCtrl: {fileID: 7720726507352740942}
 --- !u!65 &1965304410
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2596,6 +2613,7 @@ MonoBehaviour:
   SidewaysExtremumSlip: 0.2
   AntiRollForce: 5000
   DownforceCoefficient: 2
+  curTCS: 0.5
   MaxSpeedKMH: 200
   WeatherMgr: {fileID: 704208777}
   lowTraction: 0.2
