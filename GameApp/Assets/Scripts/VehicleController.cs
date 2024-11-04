@@ -30,7 +30,7 @@ public class VehicleController : MonoBehaviour
     public float AntiRollForce = 5000f;
     public float DownforceCoefficient = 1f;
     public static float TractionControlStrength = 0.5f;
-    float curTCS = TractionControlStrength;
+    public float curTCS = TractionControlStrength;
     public float MaxSpeedKMH = 200f;
 
     private Rigidbody rb;
@@ -47,6 +47,11 @@ public class VehicleController : MonoBehaviour
         public WheelCollider Collider;
         public float SlipRatio;
         public float PrevAngularVelocity;
+    }
+
+    public void setSippery(bool slippery)
+    {
+        this.slippery = slippery;
     }
 
     private void Start()
