@@ -23,4 +23,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Screens/RaceScreen.unity
     guid: 425b16f4290993444845e97f3cb16821
+  - enabled: 1
+    path: Assets/Scenes/Screens/InstructionsScreen.unity
+    guid: 97b91b997396bd04cb12e74ca543ab7e
+  - enabled: 1
+    path: Assets/Scenes/Screens/PauseScreen.unity
+    guid: 2c56f0c85f01ddf418b147eb393447cd
+  - enabled: 1
+    path: Assets/Scenes/Screens/WinLoseScreen.unity
+    guid: 4cfa21fbbdf932742b30a7cc01cce70e
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
