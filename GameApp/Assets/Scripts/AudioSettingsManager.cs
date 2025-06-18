@@ -28,6 +28,12 @@ public class AudioSettingsManager : MonoBehaviour
         musicSlider.onValueChanged.AddListener(delegate { OnSliderValueChanged(); });
     }
 
+
+    public void ChangeVolume(){
+    	AudioListener.volume = masterVolumeSlider.value*0.01f;
+	OnSliderValueChanged();
+    }
+
     private void OnSliderValueChanged()
     {
         // Update value displays
