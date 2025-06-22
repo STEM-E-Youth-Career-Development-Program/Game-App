@@ -8,7 +8,7 @@ public class MasterVolume : MonoBehaviour
     [SerializeField] Slider MasterVolumeSlider;
     void Start()
     {
-
+        Load();
     }
 
     public void Changed()
@@ -17,7 +17,7 @@ public class MasterVolume : MonoBehaviour
         Save();
     }
 
-    public void Load()
+    private void Load()
     {
         MasterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 100f);
     }

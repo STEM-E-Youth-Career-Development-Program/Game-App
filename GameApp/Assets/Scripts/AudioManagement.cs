@@ -26,6 +26,12 @@ public class AudioManagement : MonoBehaviour
     {
         BGMusicSource.clip = bg;
         BGMusicSource.Play();
-        AudioListener.volume = PlayerPrefs.GetFloat("MasterVolume")*0.01f;
+        AudioListener.volume = PlayerPrefs.GetFloat("MasterVolume") * 0.01f;
     }
+
+    public void SetMusicVolume(float value)
+    {
+        BGMusicSource.volume = value * 0.01f;
+    }
+
 }
