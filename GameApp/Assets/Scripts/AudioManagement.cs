@@ -26,12 +26,24 @@ public class AudioManagement : MonoBehaviour
     {
         BGMusicSource.clip = bg;
         BGMusicSource.Play();
-        AudioListener.volume = PlayerPrefs.GetFloat("MasterVolume") * 0.01f;
+        AudioListener.volume = PlayerPrefs.GetFloat("MasterVolume", 100f) * .01f;
+        BGMusicSource.volume = PlayerPrefs.GetFloat("MusicVolume", 100f) * .01f;
+        SFXSource.volume = PlayerPrefs.GetFloat("SFXVolume", 100f) * .01f;
     }
 
     public void SetMusicVolume(float value)
     {
-        BGMusicSource.volume = value * 0.01f;
+        BGMusicSource.volume = value * .01f;
+    }
+
+    public void SetSFXVolume(float value)
+    {
+        SFXSource.volume = value * .01f;
+    }
+
+    public void PlayClick()
+    {
+        SFXSource.PlayOneShot(click);
     }
 
 }

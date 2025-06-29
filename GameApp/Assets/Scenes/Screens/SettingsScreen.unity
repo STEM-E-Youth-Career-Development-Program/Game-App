@@ -311,6 +311,7 @@ GameObject:
   - component: {fileID: 238540163}
   - component: {fileID: 238540162}
   - component: {fileID: 238540161}
+  - component: {fileID: 238540164}
   m_Layer: 5
   m_Name: WASDButton
   m_TagString: Untagged
@@ -419,6 +420,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238540159}
   m_CullTransparentMesh: 1
+--- !u!114 &238540164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238540159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d6df5f9c61fd445baabb7eefcc8ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &278803539
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +560,7 @@ GameObject:
   - component: {fileID: 369118121}
   - component: {fileID: 369118120}
   - component: {fileID: 369118119}
+  - component: {fileID: 369118123}
   m_Layer: 5
   m_Name: BackToMainMenuButton
   m_TagString: Untagged
@@ -655,6 +669,18 @@ RectTransform:
   m_AnchoredPosition: {x: -356, y: 160}
   m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &369118123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369118118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d6df5f9c61fd445baabb7eefcc8ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &384760353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,6 +2334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1600769368}
   - component: {fileID: 1600769367}
+  - component: {fileID: 1600769369}
   m_Layer: 5
   m_Name: SoundFXSlider
   m_TagString: Untagged
@@ -2365,7 +2392,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1600769369}
+        m_TargetAssemblyTypeName: SFXSlider, Assembly-CSharp
+        m_MethodName: Changed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &1600769368
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2388,6 +2427,19 @@ RectTransform:
   m_AnchoredPosition: {x: 64.27075, y: 56.5}
   m_SizeDelta: {x: 480, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1600769369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600769366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c04e2ada7fe1874e9ea2dcdf35733ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxSlider: {fileID: 1600769367}
 --- !u!1 &1757167806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2572,6 +2624,7 @@ GameObject:
   - component: {fileID: 1994364254}
   - component: {fileID: 1994364253}
   - component: {fileID: 1994364252}
+  - component: {fileID: 1994364255}
   m_Layer: 5
   m_Name: ArrowKeysButton
   m_TagString: Untagged
@@ -2680,6 +2733,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994364250}
   m_CullTransparentMesh: 1
+--- !u!114 &1994364255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994364250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d6df5f9c61fd445baabb7eefcc8ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2024277517
 GameObject:
   m_ObjectHideFlags: 0

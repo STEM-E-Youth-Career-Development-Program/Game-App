@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 65745623}
   - component: {fileID: 65745622}
   - component: {fileID: 65745621}
+  - component: {fileID: 65745624}
   m_Layer: 5
   m_Name: Garage
   m_TagString: Untagged
@@ -388,6 +389,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65745619}
   m_CullTransparentMesh: 1
+--- !u!114 &65745624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65745619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d6df5f9c61fd445baabb7eefcc8ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &171776375
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +413,7 @@ GameObject:
   - component: {fileID: 171776379}
   - component: {fileID: 171776378}
   - component: {fileID: 171776377}
+  - component: {fileID: 171776380}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -424,8 +438,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 422.53, y: 143.62}
-  m_SizeDelta: {x: 310, y: 174.746}
+  m_AnchoredPosition: {x: 422.53, y: 150.793}
+  m_SizeDelta: {x: 310, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &171776377
 MonoBehaviour:
@@ -521,6 +535,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171776375}
   m_CullTransparentMesh: 1
+--- !u!114 &171776380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171776375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d6df5f9c61fd445baabb7eefcc8ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &283014328
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,6 +916,7 @@ GameObject:
   - component: {fileID: 541042385}
   - component: {fileID: 541042384}
   - component: {fileID: 541042383}
+  - component: {fileID: 541042386}
   m_Layer: 5
   m_Name: Missions
   m_TagString: Untagged
@@ -1011,6 +1038,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541042381}
   m_CullTransparentMesh: 1
+--- !u!114 &541042386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541042381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d6df5f9c61fd445baabb7eefcc8ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &601823433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,6 +1664,7 @@ GameObject:
   - component: {fileID: 1286282275}
   - component: {fileID: 1286282274}
   - component: {fileID: 1286282273}
+  - component: {fileID: 1286282276}
   m_Layer: 5
   m_Name: Race
   m_TagString: Untagged
@@ -1746,6 +1786,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286282271}
   m_CullTransparentMesh: 1
+--- !u!114 &1286282276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286282271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d6df5f9c61fd445baabb7eefcc8ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1366840383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,6 +1885,7 @@ GameObject:
   - component: {fileID: 1482747812}
   - component: {fileID: 1482747811}
   - component: {fileID: 1482747810}
+  - component: {fileID: 1482747813}
   m_Layer: 5
   m_Name: Instructions
   m_TagString: Untagged
@@ -1953,6 +2006,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482747808}
   m_CullTransparentMesh: 1
+--- !u!114 &1482747813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482747808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d6df5f9c61fd445baabb7eefcc8ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1685136709
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,7 +2439,7 @@ MonoBehaviour:
   BGMusicSource: {fileID: 283014329}
   SFXSource: {fileID: 1685136710}
   bg: {fileID: 8300000, guid: a4157eac71a524d5e85d2fb6f4649506, type: 3}
-  click: {fileID: 0}
+  click: {fileID: 8300000, guid: e80bd84d2d4bff94f8ade222c1439ed6, type: 3}
 --- !u!4 &1968192333
 Transform:
   m_ObjectHideFlags: 0
