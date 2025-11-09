@@ -24,3 +24,4 @@ EditorBuildSettings:
     path: Assets/Scenes/Screens/RaceScreen.unity
     guid: 425b16f4290993444845e97f3cb16821
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
