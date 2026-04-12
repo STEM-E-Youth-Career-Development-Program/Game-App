@@ -99,9 +99,9 @@ public class VehicleController : MonoBehaviour
     private void LimitTopSpeed()
     {
         float maxSpeedMS = MaxSpeedKMH / 3.6f;
-        if (rb.velocity.magnitude > maxSpeedMS)
+        if (rb.linearVelocity.magnitude > maxSpeedMS)
         {
-            rb.velocity = rb.velocity.normalized * maxSpeedMS;
+            rb.linearVelocity = rb.linearVelocity.normalized * maxSpeedMS;
         }
     }
 
@@ -155,7 +155,7 @@ public class VehicleController : MonoBehaviour
 
     private void ApplyDownforce()
     {
-        float speed = rb.velocity.magnitude;
+        float speed = rb.linearVelocity.magnitude;
         float downforce = DownforceCoefficient * speed * speed;
         rb.AddForce(-transform.up * downforce);
     }

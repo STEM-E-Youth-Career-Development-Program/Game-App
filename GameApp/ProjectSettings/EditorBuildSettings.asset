@@ -27,3 +27,4 @@ EditorBuildSettings:
     path: Assets/Scenes/Screens/WinLossScreen.unity
     guid: e90710c9c3bb65843828627dc50fcd9c
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
