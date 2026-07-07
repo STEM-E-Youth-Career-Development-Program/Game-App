@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Screens/MainMenu.unity
     guid: c0d460ca9521b364ba5c1bee4d08feed
   - enabled: 1
-    path: Assets/Scenes/Screens/SettingsScreen.unity
+    path: Assets/Scenes/Screens/Game&PauseScreens.unity
     guid: 8e584aa73691358468d57a7d3bf00924
   - enabled: 0
     path: Assets/Scenes/Screens/GarageScreen.unity
