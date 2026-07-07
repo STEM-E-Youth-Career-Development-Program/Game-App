@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class VehicleController : MonoBehaviour
 {
     public InputController InputCtrl;
+    public bool controlsEnabled = true;
     [Tooltip("Set ref in order of FL, FR, RL, RR")]
     public WheelCollider[] WheelColliders;
     [Tooltip("Set ref of wheel meshes in order of  FL, FR, RL, RR")]
@@ -20,8 +21,8 @@ public class VehicleController : MonoBehaviour
     public float TargetPosition = 0.5f;
 
     [Header("Friction Settings")]
-    public float ForwardFriction = 1.5f;
-    public float SidewaysFriction = 1.5f;
+    public float ForwardFriction = 10f;
+    public float SidewaysFriction = 10f;
     public float ForwardExtremumSlip = 0.4f;
     public float SidewaysExtremumSlip = 0.2f;
 
@@ -86,9 +87,13 @@ public class VehicleController : MonoBehaviour
         LimitTopSpeed();
         ApplyAntiRollForce();
         ApplyDownforce();
-        Drive();
-        Steer();
-        Brake();
+
+        if (controlsEnabled)
+        {
+            Drive();
+            Steer();
+            Brake();
+        }
     }
 
     private void LimitTopSpeed()
@@ -155,15 +160,32 @@ public class VehicleController : MonoBehaviour
         rb.AddForce(-transform.up * downforce);
     }
 
-    private void Drive()
+    /*private void Drive()
     {
         float targetMotorTorque = InputCtrl.Vertical * MaxMotorTorque;
         currentMotorTorque = Mathf.Lerp(currentMotorTorque, targetMotorTorque, Time.fixedDeltaTime * 5f);
 
         for (int i = 2; i < 4; i++) // Apply drive force to rear wheels only
         {
-            float adjustedTorque = ApplyTractionControl(currentMotorTorque, wheelDataList[i]);
-            WheelColliders[i].motorTorque = adjustedTorque;
+            //float adjustedTorque = ApplyTractionControl(currentMotorTorque, wheelDataList[i]);
+            WheelColliders[i].motorTorque = currentMotorTorque;
+            //WheelColliders[i].motorTorque = adjustedTorque;
+            AdjustWheelFriction(WheelColliders[i], wheelDataList[i]);
+        }
+    }*/
+    private void Drive()
+    {
+        float targetMotorTorque = InputCtrl.Vertical * MaxMotorTorque;
+        currentMotorTorque = Mathf.Lerp(currentMotorTorque, targetMotorTorque, Time.fixedDeltaTime * 5f);
+
+        for (int i = 2; i < 4; i++)
+        {
+            WheelColliders[i].motorTorque = currentMotorTorque;
+
+            // Optional: turn off traction control for now
+            // float adjustedTorque = ApplyTractionControl(currentMotorTorque, wheelDataList[i]);
+            // WheelColliders[i].motorTorque = adjustedTorque;
+
             AdjustWheelFriction(WheelColliders[i], wheelDataList[i]);
         }
     }
